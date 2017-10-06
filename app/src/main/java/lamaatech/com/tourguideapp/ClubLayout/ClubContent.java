@@ -27,9 +27,13 @@ public class ClubContent {
 
     static {
         // Add some sample items.
+        addItem(new ClubItem("", "Mokattam Club", "Is a sporting club that is there near to elqudos mosuque"));
+        addItem(new ClubItem("", "Elshark Club", "Is a sporting club that is there near to elqudos mosuque"));
+        addItem(new ClubItem("", "Marks shabab El-Mokattam Club", "Is a sporting club"));
+        /*
         for (int i = 1; i <= COUNT; i++) {
             addItem(createDummyItem(i));
-        }
+        }*/
     }
 
     private static void addItem(ClubItem item) {

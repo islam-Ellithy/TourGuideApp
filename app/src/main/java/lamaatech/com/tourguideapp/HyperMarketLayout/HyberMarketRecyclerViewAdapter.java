@@ -13,12 +13,12 @@ import lamaatech.com.tourguideapp.HyperMarketLayout.HyberMarketFragment.OnListFr
 import lamaatech.com.tourguideapp.R;
 
 
-public class HyberMarketRecyclerViewAdapter extends RecyclerView.Adapter<HyberMarketRecyclerViewAdapter.ViewHolder> {
+class HyberMarketRecyclerViewAdapter extends RecyclerView.Adapter<HyberMarketRecyclerViewAdapter.ViewHolder> {
 
     private final List<HyberMarketItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public HyberMarketRecyclerViewAdapter(List<HyberMarketItem> items, OnListFragmentInteractionListener listener) {
+    HyberMarketRecyclerViewAdapter(List<HyberMarketItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -53,16 +53,16 @@ public class HyberMarketRecyclerViewAdapter extends RecyclerView.Adapter<HyberMa
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public HyberMarketItem mItem;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final View mView;
+        final TextView mIdView;
+        final TextView mContentView;
+        HyberMarketItem mItem;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
+            mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.hyberMarketName);
         }
 

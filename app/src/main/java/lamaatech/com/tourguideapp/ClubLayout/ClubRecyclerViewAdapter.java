@@ -12,17 +12,12 @@ import lamaatech.com.tourguideapp.ClubLayout.ClubContent.ClubItem;
 import lamaatech.com.tourguideapp.ClubLayout.ClubFragment.OnListFragmentInteractionListener;
 import lamaatech.com.tourguideapp.R;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link ClubItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
-public class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapter.ViewHolder> {
+class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapter.ViewHolder> {
 
     private final List<ClubItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public ClubRecyclerViewAdapter(List<ClubItem> items, OnListFragmentInteractionListener listener) {
+    ClubRecyclerViewAdapter(List<ClubItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -57,16 +52,16 @@ public class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerVi
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public ClubItem mItem;
+    class ViewHolder extends RecyclerView.ViewHolder {
+         final View mView;
+         final TextView mIdView;
+         final TextView mContentView;
+         ClubItem mItem;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
+            mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.clubName);
         }
 

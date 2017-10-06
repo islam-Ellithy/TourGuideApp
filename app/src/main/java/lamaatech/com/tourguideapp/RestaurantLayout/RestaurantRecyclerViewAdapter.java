@@ -17,12 +17,12 @@ import lamaatech.com.tourguideapp.RestaurantLayout.RestaurantContent.Restaurant;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<RestaurantRecyclerViewAdapter.ViewHolder> {
+class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<RestaurantRecyclerViewAdapter.ViewHolder> {
 
     private final List<Restaurant> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public RestaurantRecyclerViewAdapter(List<Restaurant> items, OnListFragmentInteractionListener listener) {
+    RestaurantRecyclerViewAdapter(List<Restaurant> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -37,7 +37,7 @@ public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<Restaura
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
+        holder.mIdView.setText(mValues.get(position).details);
         holder.mContentView.setText(mValues.get(position).title);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -57,16 +57,16 @@ public class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<Restaura
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public Restaurant mItem;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final View mView;
+        final TextView mIdView;
+        final TextView mContentView;
+        Restaurant mItem;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
+            mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.title);
         }
 

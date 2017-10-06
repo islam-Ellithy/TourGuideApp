@@ -21,10 +21,10 @@ public class RestaurantContent {
     private static final int COUNT = 4;
 
     static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
+        addItem(new Restaurant("", "Macdonals", "beside kornesh el-mokattam"));
+        addItem(new Restaurant("", "KFS", "in 9 street"));
+        addItem(new Restaurant("", "Bebani Kabab","In front of commerce school" ));
+        addItem(new Restaurant("", "Pizza Hut", "In elnafora squrare"));
     }
 
     private static void addItem(Restaurant item) {
@@ -32,6 +32,7 @@ public class RestaurantContent {
         ITEM_MAP.put(item.id, item);
     }
 
+    //for testing & dummy data
     private static Restaurant createDummyItem(int position) {
         return new Restaurant(String.valueOf(position), "Item " + position, makeDetails(position));
     }

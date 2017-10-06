@@ -11,17 +11,12 @@ import java.util.List;
 import lamaatech.com.tourguideapp.R;
 import lamaatech.com.tourguideapp.DrinkLayout.DrinkContent.DrinkItem;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DrinkItem} and makes a call to the
- * specified {@link DrinkFragment.OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
-public class DrinkRecyclerViewAdapter extends RecyclerView.Adapter<DrinkRecyclerViewAdapter.ViewHolder> {
+class DrinkRecyclerViewAdapter extends RecyclerView.Adapter<DrinkRecyclerViewAdapter.ViewHolder> {
 
     private final List<DrinkItem> mValues;
     private final DrinkFragment.OnListFragmentInteractionListener mListener;
 
-    public DrinkRecyclerViewAdapter(List<DrinkItem> items, DrinkFragment.OnListFragmentInteractionListener listener) {
+    DrinkRecyclerViewAdapter(List<DrinkItem> items, DrinkFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -56,16 +51,16 @@ public class DrinkRecyclerViewAdapter extends RecyclerView.Adapter<DrinkRecycler
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DrinkItem mItem;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final View mView;
+        final TextView mIdView;
+        final TextView mContentView;
+        DrinkItem mItem;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
+            mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.title);
         }
 

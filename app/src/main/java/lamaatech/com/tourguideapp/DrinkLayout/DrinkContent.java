@@ -21,9 +21,9 @@ public class DrinkContent {
 
     static {
         // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
+        addItem(new DrinkItem("", "Abo Laila for drinks", "In 9 street beside queen store"));
+        addItem(new DrinkItem("", "El-Family for drinks", "in 9 street"));
+        addItem(new DrinkItem("", "Zoon Coffe", "Is a coffe near to masr club"));
     }
 
     private static void addItem(DrinkItem item) {

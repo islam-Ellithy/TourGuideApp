@@ -16,9 +16,10 @@ public class HyberMarketContent {
 
     static {
         // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
+        addItem(new HyberMarketItem("", "Metro", "beside kornesh el-mokattam"));
+        addItem(new HyberMarketItem("", "khair zaman", "in 9 street"));
+        addItem(new HyberMarketItem("", "Carrfour", "In elnafora squrare"));
+        addItem(new HyberMarketItem("", "Ragb's sons", "In front of commerce school"));
     }
 
     private static void addItem(HyberMarketItem item) {

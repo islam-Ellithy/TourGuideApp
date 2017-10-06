@@ -13,16 +13,9 @@ import android.view.ViewGroup;
 import lamaatech.com.tourguideapp.R;
 import lamaatech.com.tourguideapp.RestaurantLayout.RestaurantContent.Restaurant;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
 public class RestaurantFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
