@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -32,8 +33,9 @@ class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapt
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).clubName);
+        holder.mIdView.setText(mValues.get(position).details);
+        holder.mClubImage.setImageResource(mValues.get(position).clubImage);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +58,7 @@ class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapt
          final View mView;
          final TextView mIdView;
          final TextView mContentView;
+         final ImageView mClubImage;
          ClubItem mItem;
 
         ViewHolder(View view) {
@@ -63,6 +66,7 @@ class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapt
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.clubName);
+            mClubImage = (ImageView)view.findViewById(R.id.clubImage);
         }
 
         @Override

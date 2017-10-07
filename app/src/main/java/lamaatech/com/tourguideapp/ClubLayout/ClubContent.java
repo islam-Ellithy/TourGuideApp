@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lamaatech.com.tourguideapp.R;
+
 /**
  * Helper class for providing sample clubName for user interfaces created by
  * Android template wizards.
@@ -27,9 +29,9 @@ public class ClubContent {
 
     static {
         // Add some sample items.
-        addItem(new ClubItem("", "Mokattam Club", "Is a sporting club that is there near to elqudos mosuque"));
-        addItem(new ClubItem("", "Elshark Club", "Is a sporting club that is there near to elqudos mosuque"));
-        addItem(new ClubItem("", "Marks shabab El-Mokattam Club", "Is a sporting club"));
+        addItem(new ClubItem(R.drawable.mokattam_club, "Mokattam Club", "Is a sporting club that is there near to elqudos mosuque"));
+        addItem(new ClubItem(R.drawable.masr, "Elshark Club", "Is a sporting club that is there near to elqudos mosuque"));
+        addItem(new ClubItem(R.drawable.ahly, "Ahly Club", "Is a sporting club"));
         /*
         for (int i = 1; i <= COUNT; i++) {
             addItem(createDummyItem(i));
@@ -38,11 +40,11 @@ public class ClubContent {
 
     private static void addItem(ClubItem item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_MAP.put(item.clubName, item);
     }
 
     private static ClubItem createDummyItem(int position) {
-        return new ClubItem(String.valueOf(position), "Item " + position, makeDetails(position));
+        return new ClubItem(R.drawable.mokattam, "Item " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {
@@ -58,12 +60,12 @@ public class ClubContent {
      * A dummy item representing a piece of clubName.
      */
     public static class ClubItem {
-        public final String id;
+        public final Integer clubImage;
         public final String clubName;
         public final String details;
 
-        public ClubItem(String id, String clubName, String details) {
-            this.id = id;
+        public ClubItem(Integer clubImage, String clubName, String details) {
+            this.clubImage = clubImage;
             this.clubName = clubName;
             this.details = details;
         }

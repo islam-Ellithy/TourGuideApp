@@ -23,7 +23,7 @@ public class DrinkContent {
         // Add some sample items.
         addItem(new DrinkItem("", "Abo Laila for drinks", "In 9 street beside queen store"));
         addItem(new DrinkItem("", "El-Family for drinks", "in 9 street"));
-        addItem(new DrinkItem("", "Zoon Coffe", "Is a coffe near to masr club"));
+        addItem(new DrinkItem("", "Zoon Coffe", "Is a coffe near to mokattam_club club"));
     }
 
     private static void addItem(DrinkItem item) {
