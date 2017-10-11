@@ -5,4 +5,60 @@
     <string name="title_activity_main">Tour Guide Mokattam</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="mokattam_club">Mokattam Club</string>
+    <string name="mokattam_desc">Is a sporting club that is there near to elqudos mosuque</string>
+    <string name="masr_club">Masr Club</string>
+    <string name="masr_desc">Is a sporting club that is there near to elqudos mosuque</string>
+    <string name="ahly_club">Ahly Club</string>
+    <string name="ahly_desc">Is a sporting club</string>
+
+
+    <string-array name="restaurant_names_array">
+        <item>Macdonals</item>
+        <item>KFC</item>
+        <item>Bebani Kabab</item>
+        <item>Pizza Hut</item>
+    </string-array>
+
+    <string-array name="restaurant_desc_array">
+        <item>beside kornesh el-mokattam</item>
+        <item>in 9 street</item>
+        <item>In front of commerce school</item>
+        <item>In elnafora squrare</item>
+    </string-array>
+
+
+    <string-array name="hypermarket_names_array">
+        <item>Metro</item>
+        <item>khair zaman</item>
+        <item>Carrfour</item>
+        <item>Ragb sons</item>
+    </string-array>
+
+    <string-array name="hypermarket_desc_array">
+        <item>beside kornesh el-mokattam</item>
+        <item>in 9 street</item>
+        <item>In elnafora squrare</item>
+        <item>In front of commerce school</item>
+    </string-array>
+
+
+    <string-array name="drink_names_array">
+        <item>Abo Laila for drinks</item>
+        <item>El-Family for drinks</item>
+        <item>Zoon Coffe</item>
+    </string-array>
+
+    <string-array name="drink_desc_array">
+        <item>In 9 street beside queen store</item>
+        <item>in 9 street</item>
+        <item>Is a coffe near to mokattam_club club</item>
+=    </string-array>
+
+
+
+    addItem(new Drink("", "", ""));
+    addItem(new Drink("", "", ""));
+    addItem(new Drink("", "", ""));
+
 </resources>

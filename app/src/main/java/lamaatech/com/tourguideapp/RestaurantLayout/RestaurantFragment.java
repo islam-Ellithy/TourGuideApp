@@ -11,13 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import lamaatech.com.tourguideapp.R;
-import lamaatech.com.tourguideapp.RestaurantLayout.RestaurantContent.Restaurant;
 
+@SuppressWarnings("ALL")
 public class RestaurantFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private RestaurantPresenter presenter;
 
     public RestaurantFragment() {
     }
@@ -35,6 +36,8 @@ public class RestaurantFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (presenter == null)
+            presenter = new RestaurantPresenter(getContext());
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -54,7 +57,7 @@ public class RestaurantFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new RestaurantRecyclerViewAdapter(RestaurantContent.ITEMS, mListener));
+            recyclerView.setAdapter(new RestaurantRecyclerViewAdapter(presenter.getListOfRestaurants(), mListener));
         }
         return view;
     }

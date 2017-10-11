@@ -4,13 +4,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import lamaatech.com.tourguideapp.R;
 import lamaatech.com.tourguideapp.RestaurantLayout.RestaurantFragment.OnListFragmentInteractionListener;
-import lamaatech.com.tourguideapp.RestaurantLayout.RestaurantContent.Restaurant;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link Restaurant} and makes a call to the
@@ -39,6 +39,7 @@ class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<RestaurantRecyc
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).details);
         holder.mContentView.setText(mValues.get(position).title);
+        holder.mImage.setImageResource(mValues.get(position).restaurantImage);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +62,7 @@ class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<RestaurantRecyc
         final View mView;
         final TextView mIdView;
         final TextView mContentView;
+        final ImageView mImage ;
         Restaurant mItem;
 
         ViewHolder(View view) {
@@ -68,6 +70,7 @@ class RestaurantRecyclerViewAdapter extends RecyclerView.Adapter<RestaurantRecyc
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.title);
+            mImage = (ImageView)view.findViewById(R.id.image_resturant);
         }
 
         @Override

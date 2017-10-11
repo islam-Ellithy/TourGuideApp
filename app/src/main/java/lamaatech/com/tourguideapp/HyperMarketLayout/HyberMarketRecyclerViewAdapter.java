@@ -4,21 +4,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
-import lamaatech.com.tourguideapp.HyperMarketLayout.HyberMarketContent.HyberMarketItem;
 import lamaatech.com.tourguideapp.HyperMarketLayout.HyberMarketFragment.OnListFragmentInteractionListener;
 import lamaatech.com.tourguideapp.R;
 
 
 class HyberMarketRecyclerViewAdapter extends RecyclerView.Adapter<HyberMarketRecyclerViewAdapter.ViewHolder> {
 
-    private final List<HyberMarketItem> mValues;
+    private final List<HyperMarket> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    HyberMarketRecyclerViewAdapter(List<HyberMarketItem> items, OnListFragmentInteractionListener listener) {
+    HyberMarketRecyclerViewAdapter(List<HyperMarket> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -33,9 +33,9 @@ class HyberMarketRecyclerViewAdapter extends RecyclerView.Adapter<HyberMarketRec
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).hyberMarketName);
-
+        holder.mIdView.setText(mValues.get(position).hyberMarketName);
+        holder.mContentView.setText(mValues.get(position).details);
+        holder.mImageHyper.setImageResource(mValues.get(position).imagePath);
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,13 +57,15 @@ class HyberMarketRecyclerViewAdapter extends RecyclerView.Adapter<HyberMarketRec
         final View mView;
         final TextView mIdView;
         final TextView mContentView;
-        HyberMarketItem mItem;
+        final ImageView mImageHyper;
+        HyperMarket mItem;
 
         ViewHolder(View view) {
             super(view);
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.hyberMarketName);
+            mImageHyper = (ImageView)view.findViewById(R.id.hyper_image);
         }
 
         @Override

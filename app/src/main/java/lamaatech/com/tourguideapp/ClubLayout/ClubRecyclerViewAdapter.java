@@ -7,18 +7,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import lamaatech.com.tourguideapp.ClubLayout.ClubContent.ClubItem;
 import lamaatech.com.tourguideapp.ClubLayout.ClubFragment.OnListFragmentInteractionListener;
 import lamaatech.com.tourguideapp.R;
 
 class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapter.ViewHolder> {
 
-    private final List<ClubItem> mValues;
+    private final List<Club> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    ClubRecyclerViewAdapter(List<ClubItem> items, OnListFragmentInteractionListener listener) {
+    ClubRecyclerViewAdapter(ArrayList<Club> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -59,7 +59,7 @@ class ClubRecyclerViewAdapter extends RecyclerView.Adapter<ClubRecyclerViewAdapt
          final TextView mIdView;
          final TextView mContentView;
          final ImageView mClubImage;
-         ClubItem mItem;
+         Club mItem;
 
         ViewHolder(View view) {
             super(view);

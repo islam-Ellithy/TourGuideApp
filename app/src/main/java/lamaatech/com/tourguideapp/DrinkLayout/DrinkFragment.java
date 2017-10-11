@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import lamaatech.com.tourguideapp.DrinkLayout.DrinkContent.DrinkItem;
 import lamaatech.com.tourguideapp.R;
 
 /**
@@ -19,11 +18,13 @@ import lamaatech.com.tourguideapp.R;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
+@SuppressWarnings("ALL")
 public class DrinkFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private DrinkPresenter presenter;
 
     public DrinkFragment() {
     }
@@ -41,6 +42,8 @@ public class DrinkFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (presenter == null)
+            presenter = new DrinkPresenter(getContext());
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -60,7 +63,7 @@ public class DrinkFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new DrinkRecyclerViewAdapter(DrinkContent.ITEMS, mListener));
+            recyclerView.setAdapter(new DrinkRecyclerViewAdapter(presenter.getListOfClubs(), mListener));
         }
         return view;
     }
@@ -81,6 +84,6 @@ public class DrinkFragment extends Fragment {
     }
 
     interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(DrinkItem item);
+        void onListFragmentInteraction(Drink item);
     }
 }

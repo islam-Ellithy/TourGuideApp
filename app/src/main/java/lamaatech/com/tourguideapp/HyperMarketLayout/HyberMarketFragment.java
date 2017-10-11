@@ -10,14 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import lamaatech.com.tourguideapp.HyperMarketLayout.HyberMarketContent.HyberMarketItem;
 import lamaatech.com.tourguideapp.R;
 
+@SuppressWarnings("ALL")
 public class HyberMarketFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private HyperMarketPresenter presenter;
 
     public HyberMarketFragment() {
     }
@@ -35,6 +36,8 @@ public class HyberMarketFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (presenter == null)
+            presenter = new HyperMarketPresenter(getContext());
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -54,7 +57,7 @@ public class HyberMarketFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new HyberMarketRecyclerViewAdapter(HyberMarketContent.ITEMS, mListener));
+            recyclerView.setAdapter(new HyberMarketRecyclerViewAdapter(presenter.getListOfHyperMarkets(), mListener));
         }
         return view;
     }
@@ -75,6 +78,6 @@ public class HyberMarketFragment extends Fragment {
     }
 
     interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(HyberMarketItem item);
+        void onListFragmentInteraction(HyperMarket item);
     }
 }

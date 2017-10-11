@@ -4,19 +4,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import lamaatech.com.tourguideapp.R;
-import lamaatech.com.tourguideapp.DrinkLayout.DrinkContent.DrinkItem;
+
 
 class DrinkRecyclerViewAdapter extends RecyclerView.Adapter<DrinkRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DrinkItem> mValues;
+    private final List<Drink> mValues;
     private final DrinkFragment.OnListFragmentInteractionListener mListener;
 
-    DrinkRecyclerViewAdapter(List<DrinkItem> items, DrinkFragment.OnListFragmentInteractionListener listener) {
+    DrinkRecyclerViewAdapter(List<Drink> items, DrinkFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -54,14 +55,16 @@ class DrinkRecyclerViewAdapter extends RecyclerView.Adapter<DrinkRecyclerViewAda
     class ViewHolder extends RecyclerView.ViewHolder {
         final View mView;
         final TextView mIdView;
+        final ImageView mImage;
         final TextView mContentView;
-        DrinkItem mItem;
+        Drink mItem;
 
         ViewHolder(View view) {
             super(view);
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.details);
             mContentView = (TextView) view.findViewById(R.id.title);
+            mImage = (ImageView) view.findViewById(R.id.image_resturant);
         }
 
         @Override

@@ -10,15 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import lamaatech.com.tourguideapp.ClubLayout.ClubContent.ClubItem;
 import lamaatech.com.tourguideapp.R;
 
 
+@SuppressWarnings("ALL")
 public class ClubFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private ClubPresenter presenter;
 
     public ClubFragment() {
     }
@@ -36,6 +37,9 @@ public class ClubFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (presenter == null)
+            presenter = new ClubPresenter(getContext());
+
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -46,6 +50,7 @@ public class ClubFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_list, container, false);
 
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -55,7 +60,7 @@ public class ClubFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new ClubRecyclerViewAdapter(ClubContent.ITEMS, mListener));
+            recyclerView.setAdapter(new ClubRecyclerViewAdapter(presenter.getListOfClubs(), mListener));
         }
         return view;
     }
@@ -76,6 +81,6 @@ public class ClubFragment extends Fragment {
     }
 
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(ClubItem item);
+        void onListFragmentInteraction(Club item);
     }
 }

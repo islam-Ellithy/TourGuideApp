@@ -6,8 +6,9 @@
 
     <ImageView
         style="@style/imageViewStyle"
+        android:id="@+id/image_drink"
         android:scaleType="centerCrop"
-        android:src="@drawable/mokattam" />
+        android:src="@mipmap/coffe_shop" />
 
     <TextView
         android:id="@+id/details"
