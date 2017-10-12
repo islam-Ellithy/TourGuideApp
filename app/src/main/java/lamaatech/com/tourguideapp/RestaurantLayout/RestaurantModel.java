@@ -22,10 +22,10 @@ public class RestaurantModel implements RestaurantContract.Model {
         String[] restaurantNames = res.getStringArray(R.array.restaurant_names_array);
         String[] restaurantDesc = res.getStringArray(R.array.restaurant_desc_array);
 
-        addItem(new Restaurant(R.mipmap.mac, restaurantNames[0], restaurantDesc[0]));
-        addItem(new Restaurant(R.mipmap.kfc, restaurantNames[1], restaurantDesc[1]));
-        addItem(new Restaurant(R.mipmap.beef, restaurantNames[2], restaurantDesc[2]));
-        addItem(new Restaurant(R.mipmap.pizza_hut,restaurantNames[3], restaurantDesc[3]));
+        addItem(new Restaurant(R.drawable.mcdonalds, restaurantNames[0], restaurantDesc[0]));
+        addItem(new Restaurant(R.drawable.kfc, restaurantNames[1], restaurantDesc[1]));
+        addItem(new Restaurant(R.drawable.beef, restaurantNames[2], restaurantDesc[2]));
+        addItem(new Restaurant(R.drawable.pizza_hut, restaurantNames[3], restaurantDesc[3]));
     }
 
     private void addItem(Restaurant item) {

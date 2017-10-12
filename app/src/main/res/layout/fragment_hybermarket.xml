@@ -9,7 +9,7 @@
         style="@style/imageViewStyle"
         android:id="@+id/hyper_image"
         android:scaleType="centerCrop"
-        android:src="@drawable/mokattam" />
+        android:src="@drawable/carrefour" />
 
     <TextView
         android:id="@+id/details"

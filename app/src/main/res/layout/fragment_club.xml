@@ -8,7 +8,7 @@
         android:id="@+id/clubImage"
         style="@style/imageViewStyle"
         android:scaleType="centerCrop"
-        android:src="@drawable/mokattam" />
+        android:src="@drawable/ahly"/>
 
     <TextView
         android:id="@+id/clubName"

@@ -21,10 +21,10 @@ class HyperMarketModel implements HyperMarketContract.Model{
         String[] hypermarketNames = res.getStringArray(R.array.hypermarket_names_array);
         String[] hypermarketDesc = res.getStringArray(R.array.hypermarket_desc_array);
 
-        addItem(new HyperMarket(R.mipmap.coffe_shop, hypermarketNames[0], hypermarketDesc[0]));
-        addItem(new HyperMarket(R.mipmap.zman, hypermarketNames[1], hypermarketDesc[1]));
-        addItem(new HyperMarket(R.mipmap.carrfor, hypermarketNames[2], hypermarketDesc[2]));
-        addItem(new HyperMarket(R.mipmap.ragb, hypermarketNames[3], hypermarketDesc[3]));
+        addItem(new HyperMarket(R.drawable.coffe_shop, hypermarketNames[0], hypermarketDesc[0]));
+        addItem(new HyperMarket(R.drawable.zman, hypermarketNames[1], hypermarketDesc[1]));
+        addItem(new HyperMarket(R.drawable.carrefour, hypermarketNames[2], hypermarketDesc[2]));
+        addItem(new HyperMarket(R.drawable.ragb, hypermarketNames[3], hypermarketDesc[3]));
     }
 
     private void addItem(HyperMarket item) {
